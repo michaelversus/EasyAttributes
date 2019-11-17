@@ -1,0 +1,6 @@
+framework module EasyAttributes {
+  umbrella header "EasyAttributes-umbrella.h"
+
+  export *
+  module * { export * }
+}

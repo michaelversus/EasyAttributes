@@ -1,0 +1,16 @@
+PODS:
+  - EasyAttributes (0.1.0)
+
+DEPENDENCIES:
+  - EasyAttributes (from `../`)
+
+EXTERNAL SOURCES:
+  EasyAttributes:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  EasyAttributes: 9f6c2adf1fdc5807fb9302f450a4b50e0be35b8c
+
+PODFILE CHECKSUM: fe05788f25fbb737c948f488161d5d5d6398390f
+
+COCOAPODS: 1.5.3
