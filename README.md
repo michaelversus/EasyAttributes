@@ -1,6 +1,6 @@
 # EasyAttributes
 
-[![CI Status](https://travis-ci.org/michaelversus/EasyAttributes.svg?branch=master)
+[![CI Status](https://img.shields.io/cocoapods/v/EasyAttributes.svg?style=flat)](https://travis-ci.org/michaelversus/EasyAttributes.svg?branch=master)
 [![Version](https://img.shields.io/cocoapods/v/EasyAttributes.svg?style=flat)](https://cocoapods.org/pods/EasyAttributes)
 [![License](https://img.shields.io/cocoapods/l/EasyAttributes.svg?style=flat)](https://cocoapods.org/pods/EasyAttributes)
 [![Platform](https://img.shields.io/cocoapods/p/EasyAttributes.svg?style=flat)](https://cocoapods.org/pods/EasyAttributes)
