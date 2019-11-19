@@ -4,6 +4,7 @@
 [![Version](https://img.shields.io/cocoapods/v/EasyAttributes.svg?style=flat)](https://cocoapods.org/pods/EasyAttributes)
 [![License](https://img.shields.io/cocoapods/l/EasyAttributes.svg?style=flat)](https://cocoapods.org/pods/EasyAttributes)
 [![Platform](https://img.shields.io/cocoapods/p/EasyAttributes.svg?style=flat)](https://cocoapods.org/pods/EasyAttributes)
+[![codecov](https://codecov.io/gh/michaelversus/EasyAttributes/branch/master/graph/badge.svg)](https://codecov.io/gh/michaelversus/EasyAttributes)
 
 ## Example
 
