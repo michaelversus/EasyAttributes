@@ -2,18 +2,17 @@
 # * https://www.objc.io/issues/6-build-tools/travis-ci/
 # * https://github.com/supermarin/xcpretty#usage
 
-osx_image: xcode11.2.1
-language: swift
-# cache: cocoapods
-# podfile: Example/Podfile
-# before_install:
-# - gem install cocoapods # Since Travis is not always on latest version
-# - pod install --project-directory=Example
+language: objective-c
+
+osx_image: xcode10.1
 env:
   matrix:
-    - TEST_SDK=iphonesimulator13.1 OS=13.1 NAME='iPhone XR'
-    - TEST_SDK=iphonesimulator13.1 OS=13.1 NAME='iPhone 7'
-    
+    - TEST_SDK=iphonesimulator12.1 OS=12.1 NAME='iPhone XR'
+    - TEST_SDK=iphonesimulator12.1 OS=12.1 NAME='iPhone 7'
+
+script:
+  - set -o pipefail && xcodebuild test -enableCodeCoverage YES -workspace Example/EasyAttributes.xcworkspace -scheme EasyAttributes-Example -sdk $TEST_SDK -destination "platform=iOS Simulator,OS=$OS,name=$NAME" ONLY_ACTIVE_ARCH=YES
+   
 script:
 - set -o pipefail && xcodebuild test -enableCodeCoverage YES -workspace Example/EasyAttributes.xcworkspace -scheme EasyAttributes-Example -sdk $TEST_SDK -destination "platform=iOS Simulator,OS=$OS,name=$NAME" ONLY_ACTIVE_ARCH=YES
 - pod lib lint
