@@ -53,6 +53,9 @@ class ViewController: UIViewController {
     }
 }
 ```
+## Result
+![Screenshot](https://github.com/michaelversus/EasyAttributes/blob/master/screenshots/Label.png)
+
 ## Author
 
 Michalis Karagiorgos, michaliskarag@gmail.com
