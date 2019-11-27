@@ -6,9 +6,10 @@
 //
 import UIKit
 
-public enum Tag: Equatable {
+public enum Tag {
     case b(CGFloat)
     case i(CGFloat)
+    case c(UIColor?)
     case u
     case none
     
@@ -18,18 +19,25 @@ public enum Tag: Equatable {
             return [.font: UIFont.boldSystemFont(ofSize: size)]
         case .i(let size):
             return [.font: UIFont.italicSystemFont(ofSize: size)]
+        case .c(let color):
+            guard let color = color else { return nil }
+            return [.foregroundColor: color]
         case .u:
             return [.underlineStyle: NSUnderlineStyle.styleSingle.rawValue]
         case .none: return nil
         }
     }
-    
+}
+
+extension Tag: Equatable {
     public static func ==(lhs: Tag, rhs: Tag) -> Bool {
         switch (lhs, rhs) {
         case (let .b(lhsSize), let .b(rhsSize)):
             return lhsSize == rhsSize
         case (let .i(lhsSize), let .i(rhsSize)):
             return lhsSize == rhsSize
+        case (let .c(lhsColor), let .c(rhsColor)):
+            return lhsColor != nil && rhsColor == nil
         case (.u, .u):
             return true
         case (.none, .none):

@@ -26,6 +26,13 @@ public let char = Parser<Character> { str in
   return str.removeFirst()
 }
 
+public let hexColor = Parser<Substring> { str in
+    guard str.count >= 6 else { return nil }
+    let match = str.prefix(6)
+    str.removeFirst(6)
+    return match
+}
+
 public func literal(_ p: String) -> Parser<Void> {
   return Parser<Void> { str in
     guard str.hasPrefix(p) else { return nil }

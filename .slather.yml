@@ -1,6 +1,6 @@
 coverage_service: cobertura_xml
 xcodeproj: EasyAttributes.xcodeproj
-scheme: EasyAttributes
+scheme: EasyAttributes-Example
 output_directory: reports
 ignore:
   - EasyAttributes/*

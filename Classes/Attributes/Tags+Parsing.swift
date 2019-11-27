@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import UIKit
 
 public let openTagSizeLiteral = zip(literal("<"), char, int, literal(">"))
     .map { _, c, size, _ -> Tag in
@@ -16,6 +17,23 @@ public let openTagSizeLiteral = zip(literal("<"), char, int, literal(">"))
         }
 }
 
+public let openTagLiteral = zip(literal("<"), char, literal(">"))
+    .map { _, c, _ -> Tag in
+        switch c {
+        case "u": return .u
+        default: return .none
+        }
+    }
+
+public let openTagColorLiteral = zip(literal("<"), char, literal(":"), hexColor, literal(">"))
+    .map { _, c, _, hex, _ -> Tag in
+        guard let color = UIColor(hex: String(hex)) else { return .none }
+        switch c {
+        case "c": return .c(color)
+        default: return .none
+    }
+}
+
 public let closeTagSizeLiteral = zip(literal("</"), char, int, literal(">"))
     .map { _, c, size, _ -> Tag in
         switch c {
@@ -23,18 +41,26 @@ public let closeTagSizeLiteral = zip(literal("</"), char, int, literal(">"))
         case "i": return Tag.i(CGFloat(size))
         default: return Tag.none
         }
-}
+    }
+
+public let closeTagLiteral = zip(literal("</"), char, literal(">"))
+    .map { _, c, _ -> Tag in
+        switch c {
+        case "u": return .u
+        case "c": return .c(nil)
+        default: return .none
+        }
+    }
 
 public let openTag = oneOf(
+    openTagColorLiteral,
     openTagSizeLiteral,
-    literal("<u>").map { .u },
-    literal("<n>").map { .none }
+    openTagLiteral
 )
 
 public let closeTag = oneOf(
     closeTagSizeLiteral,
-    literal("</u>").map { .u },
-    literal("</n>").map { .none },
+    closeTagLiteral,
     .never
 )
 

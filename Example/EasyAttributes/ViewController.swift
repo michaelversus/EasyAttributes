@@ -18,7 +18,7 @@ class ViewController: UIViewController {
         lbl.textColor = .black
         lbl.textAlignment = .center
         lbl.font = UIFont.systemFont(ofSize: 16)
-        let string = "Hello there <b26><u>I am a bold string</u></b26> and <i14>i am an italic string</i14> Hello there <u>again</u>"
+        let string = "Hello <c:ebebeb>there</c> <b26><u>I am a bold string</u></b26> and <i14>i am an italic string</i14> Hello there <u>again</u>"
         lbl.attributedText = string.toAttributed()
         return lbl
     }()

@@ -19,6 +19,7 @@
 		583F8E102381A44F00236629 /* AttributedString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 583F8E0F2381A44F00236629 /* AttributedString.swift */; };
 		583F8E122381A47900236629 /* Tags+Parsing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 583F8E112381A47900236629 /* Tags+Parsing.swift */; };
 		5898BF7F23818BD000D7BD08 /* Parser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5898BF7E23818BD000D7BD08 /* Parser.swift */; };
+		58A221A3238EFC5C00B05DC6 /* UIColor+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58A221A2238EFC5C00B05DC6 /* UIColor+Extensions.swift */; };
 		7F762C1C60E83780E366398F496AB432 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A16F4CFC63FAC439D7A04994F579A03 /* Foundation.framework */; };
 		88E4944E9B002FF5AD95CAA598825ED4 /* Pods-EasyAttributes_Tests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = DCF9C9F90A8E0F53442F480714BFC8D4 /* Pods-EasyAttributes_Tests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		99D45C743044AB532A4303531DFE483B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A16F4CFC63FAC439D7A04994F579A03 /* Foundation.framework */; };
@@ -68,6 +69,7 @@
 		583F8E0F2381A44F00236629 /* AttributedString.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttributedString.swift; sourceTree = "<group>"; };
 		583F8E112381A47900236629 /* Tags+Parsing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Tags+Parsing.swift"; sourceTree = "<group>"; };
 		5898BF7E23818BD000D7BD08 /* Parser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Parser.swift; sourceTree = "<group>"; };
+		58A221A2238EFC5C00B05DC6 /* UIColor+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extensions.swift"; sourceTree = "<group>"; };
 		5A16F4CFC63FAC439D7A04994F579A03 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS11.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		5F1B0564C7C02EC8080C0E79214FC003 /* Pods-EasyAttributes_Example-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-EasyAttributes_Example-frameworks.sh"; sourceTree = "<group>"; };
 		67A406EF89EFFE00C5FEE4084ED41C78 /* Pods-EasyAttributes_Tests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-EasyAttributes_Tests-acknowledgements.markdown"; sourceTree = "<group>"; };
@@ -192,10 +194,19 @@
 		583F8E142384658800236629 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				58A221A1238EFC3E00B05DC6 /* Extensions */,
 				583F8E0C2381A3BD00236629 /* Attributes */,
 				583F8E0B2381A3B300236629 /* Parser */,
 			);
 			path = Classes;
+			sourceTree = "<group>";
+		};
+		58A221A1238EFC3E00B05DC6 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				58A221A2238EFC5C00B05DC6 /* UIColor+Extensions.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		5E0D919E635D23B70123790B8308F8EF /* iOS */ = {
@@ -442,6 +453,7 @@
 				583F8E102381A44F00236629 /* AttributedString.swift in Sources */,
 				583F8E0E2381A40900236629 /* Tag.swift in Sources */,
 				583F8E042381A2A500236629 /* Parser+flatMap.swift in Sources */,
+				58A221A3238EFC5C00B05DC6 /* UIColor+Extensions.swift in Sources */,
 				583F8E022381A27B00236629 /* Parser+map.swift in Sources */,
 				583F8E082381A33400236629 /* Parser+oneOf.swift in Sources */,
 				583F8E122381A47900236629 /* Tags+Parsing.swift in Sources */,
