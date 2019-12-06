@@ -53,8 +53,51 @@ class ViewController: UIViewController {
     }
 }
 ```
+
 ## Result
 ![Screenshot](https://github.com/michaelversus/EasyAttributes/blob/master/screenshots/Label.png)
+
+## Custom Fonts
+If you'd like to use custom fonts you must: 
+
+1) register the custom fonts.
+You can find instructions here: https://developer.apple.com/documentation/uikit/text_display_and_fonts/adding_a_custom_font_to_your_app
+
+2) provide a Fonts.plist as in the example app
+
+then inside ViewController...
+
+```swift
+import UIKit
+import EasyAttributes
+
+let label: UILabel = {
+   let lbl = UILabel()
+    lbl.translatesAutoresizingMaskIntoConstraints = false
+    lbl.numberOfLines = 0
+    lbl.textColor = .black
+    lbl.textAlignment = .center
+    lbl.font = UIFont.systemFont(ofSize: 16)
+    EasyAttributes.configFonts()
+    let string = "Hello <c:ebebeb>there</c> <b26><u>I am a bold string</u></b26> and <i14>i am an italic string</i14> Hello there <u>again</u> <pr36>this is custom font string</pr36>"
+    lbl.attributedText = string.toAttributed()
+    return lbl
+}()
+
+override func viewDidLoad() {
+    super.viewDidLoad()
+    
+    view.addSubview(label)
+    
+    label.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20).isActive = true
+    label.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20).isActive = true
+    label.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+    label.heightAnchor.constraint(equalToConstant: 400).isActive = true
+    
+}
+```
+## Result
+![Screenshot](https://github.com/michaelversus/EasyAttributes/blob/master/screenshots/CustomFontsFLabel.png)
 
 ## Author
 

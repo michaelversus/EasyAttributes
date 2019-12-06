@@ -18,7 +18,8 @@ class ViewController: UIViewController {
         lbl.textColor = .black
         lbl.textAlignment = .center
         lbl.font = UIFont.systemFont(ofSize: 16)
-        let string = "Hello <c:ebebeb>there</c> <b26><u>I am a bold string</u></b26> and <i14>i am an italic string</i14> Hello there <u>again</u>"
+        EasyAttributes.configFonts()
+        let string = "Hello <c:ebebeb>there</c> <b26><u>I am a bold string</u></b26> and <i14>i am an italic string</i14> Hello there <u>again</u> <pr36>this is custom font string</pr36>"
         lbl.attributedText = string.toAttributed()
         return lbl
     }()
@@ -28,10 +29,10 @@ class ViewController: UIViewController {
         
         view.addSubview(label)
         
-        label.topAnchor.constraint(equalTo: view.topAnchor, constant: 70).isActive = true
         label.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20).isActive = true
         label.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20).isActive = true
         label.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+        label.heightAnchor.constraint(equalToConstant: 400).isActive = true
         
     }
 

@@ -34,6 +34,12 @@ public let openTagColorLiteral = zip(literal("<"), char, literal(":"), hexColor,
     }
 }
 
+public let openTagCustomFontLiteral = zip(literal("<"), customFont, int, literal(">"))
+    .map { _, fKey, size, _ -> Tag in
+        guard let key = Fonts.shared.fonts[String(fKey)] else { return .none }
+        return .f(key, CGFloat(size))
+    }
+
 public let closeTagSizeLiteral = zip(literal("</"), char, int, literal(">"))
     .map { _, c, size, _ -> Tag in
         switch c {
@@ -52,13 +58,21 @@ public let closeTagLiteral = zip(literal("</"), char, literal(">"))
         }
     }
 
+public let closeTagCustomFontLiteral = zip(literal("</"), customFont, int, literal(">"))
+    .map { _, fKey, size, _ -> Tag in
+        guard let key = Fonts.shared.fonts[String(fKey)] else { return .none }
+        return .f(key, CGFloat(size))
+    }
+
 public let openTag = oneOf(
+    openTagCustomFontLiteral,
     openTagColorLiteral,
     openTagSizeLiteral,
     openTagLiteral
 )
 
 public let closeTag = oneOf(
+    closeTagCustomFontLiteral,
     closeTagSizeLiteral,
     closeTagLiteral,
     .never

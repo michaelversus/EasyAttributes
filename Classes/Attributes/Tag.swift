@@ -10,6 +10,7 @@ public enum Tag {
     case b(CGFloat)
     case i(CGFloat)
     case c(UIColor?)
+    case f(String, CGFloat)
     case u
     case none
     
@@ -22,6 +23,8 @@ public enum Tag {
         case .c(let color):
             guard let color = color else { return nil }
             return [.foregroundColor: color]
+        case .f(let fName, let size):
+            return [.font: UIFont(name: fName, size: size) ?? UIFont.systemFont(ofSize: size)]
         case .u:
             return [.underlineStyle: NSUnderlineStyle.styleSingle.rawValue]
         case .none: return nil
@@ -38,6 +41,8 @@ extension Tag: Equatable {
             return lhsSize == rhsSize
         case (let .c(lhsColor), let .c(rhsColor)):
             return lhsColor != nil && rhsColor == nil
+        case (let .f(lhsFName, lhsSize), let .f(rhsFName, rhsSize)):
+            return lhsFName == rhsFName && lhsSize == rhsSize
         case (.u, .u):
             return true
         case (.none, .none):
