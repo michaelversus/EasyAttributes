@@ -98,7 +98,7 @@ override func viewDidLoad() {
 }
 ```
 ## Result
-![Screenshot](https://github.com/michaelversus/EasyAttributes/blob/master/screenshots/CustomFontsFLabel.png)
+![Screenshot](https://github.com/michaelversus/EasyAttributes/blob/master/screenshots/CustomFontsLabel.png)
 
 ## Author
 
