@@ -72,29 +72,29 @@ then inside ViewController...
 import UIKit
 import EasyAttributes
 
-let label: UILabel = {
-   let lbl = UILabel()
-    lbl.translatesAutoresizingMaskIntoConstraints = false
-    lbl.numberOfLines = 0
-    lbl.textColor = .black
-    lbl.textAlignment = .center
-    lbl.font = UIFont.systemFont(ofSize: 16)
-    EasyAttributes.configFonts()
-    let string = "Hello <c:ebebeb>there</c> <b26><u>I am a bold string</u></b26> and <i14>i am an italic string</i14> Hello there <u>again</u> <pr36>this is custom font string</pr36>"
-    lbl.attributedText = string.toAttributed()
-    return lbl
-}()
+class ViewController: UIViewController {
 
-override func viewDidLoad() {
-    super.viewDidLoad()
+    let label: UILabel = {
+       let lbl = UILabel()
+        lbl.translatesAutoresizingMaskIntoConstraints = false
+        lbl.numberOfLines = 0
+        lbl.textColor = .black
+        lbl.textAlignment = .center
+        lbl.font = UIFont.systemFont(ofSize: 16)
+        EasyAttributes.configFonts()
+        let string = "Hello <c:ebebeb>there</c> <b26><u>I am a bold string</u></b26> and <i14>i am an italic string</i14> Hello there <u>again</u> <pr36>this is custom font string</pr36>"
+        lbl.attributedText = string.toAttributed()
+        return lbl
+    }()
     
-    view.addSubview(label)
-    
-    label.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20).isActive = true
-    label.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20).isActive = true
-    label.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
-    label.heightAnchor.constraint(equalToConstant: 400).isActive = true
-    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        view.addSubview(label)
+        label.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20).isActive = true
+        label.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20).isActive = true
+        label.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+        label.heightAnchor.constraint(equalToConstant: 400).isActive = true
+    }
 }
 ```
 ## Result

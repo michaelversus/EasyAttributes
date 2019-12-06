@@ -26,20 +26,11 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         view.addSubview(label)
-        
         label.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20).isActive = true
         label.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20).isActive = true
         label.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
         label.heightAnchor.constraint(equalToConstant: 400).isActive = true
-        
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-
 }
 
