@@ -64,6 +64,7 @@ If you'd like to use custom fonts you must:
 You can find instructions here: https://developer.apple.com/documentation/uikit/text_display_and_fonts/adding_a_custom_font_to_your_app
 
 2) provide a Fonts.plist as in the example app
+![Screenshot](https://github.com/michaelversus/EasyAttributes/blob/master/screenshots/fonts.png)
 
 then inside ViewController...
 
