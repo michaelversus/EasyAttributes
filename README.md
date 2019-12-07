@@ -11,6 +11,7 @@
 To run the example project, clone the repo, and run `pod install` from the Example directory first.
 
 ## Requirements
+iOS 10+
 
 ## Installation
 
@@ -98,8 +99,6 @@ class ViewController: UIViewController {
 }
 ```
 ## Result
-iOS 10+
-
 ![Screenshot](https://github.com/michaelversus/EasyAttributes/blob/master/screenshots/CustomFontsLabel.png)
 
 ## Author
