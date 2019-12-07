@@ -118,4 +118,36 @@ class SpecificParsersTests: XCTestCase {
         let result = zeroOrMoreSpaces.run(string)
         XCTAssertEqual(result.rest, Substring("add this font</b>"))
     }
+    
+    func testOneOrMoreSpacesSuccess() {
+        let string = "   add this font</b>"
+        let result = oneOrMoreSpaces.run(string)
+        XCTAssertEqual(result.rest, Substring("add this font</b>"))
+    }
+    
+    func testOneOrMoreSpacesFailure() {
+        let string = "add this font</b>"
+        let result = oneOrMoreSpaces.run(string)
+        XCTAssertNil(result.match)
+        XCTAssertEqual(result.rest, Substring("add this font</b>"))
+    }
+    
+    func testCommaOrNewlineCommaSuccess() {
+        let string = ",add this font</b>"
+        let result = commaOrNewline.run(string)
+        XCTAssertEqual(result.rest, "add this font</b>")
+    }
+    
+    func testCommaOrNewlineNewlineSuccess() {
+        let string = "\nadd this font</b>"
+        let result = commaOrNewline.run(string)
+        XCTAssertEqual(result.rest, "add this font</b>")
+    }
+    
+    func testCommaOrNewlineFailure() {
+        let string = "add this font</b>"
+        let result = commaOrNewline.run(string)
+        XCTAssertNil(result.match)
+        XCTAssertEqual(result.rest, "add this font</b>")
+    }
 }
