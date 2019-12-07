@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 
-public let openTagSizeLiteral = zip(literal("<"), char, int, literal(">"))
+public let openTagSizeLiteral = zip(literal("<"), charP, intP, literal(">"))
     .map { _, c, size, _ -> Tag in
         switch c {
         case "b": return Tag.b(CGFloat(size))
@@ -17,7 +17,7 @@ public let openTagSizeLiteral = zip(literal("<"), char, int, literal(">"))
         }
 }
 
-public let openTagLiteral = zip(literal("<"), char, literal(">"))
+public let openTagLiteral = zip(literal("<"), charP, literal(">"))
     .map { _, c, _ -> Tag in
         switch c {
         case "u": return .u
@@ -25,7 +25,7 @@ public let openTagLiteral = zip(literal("<"), char, literal(">"))
         }
     }
 
-public let openTagColorLiteral = zip(literal("<"), char, literal(":"), hexColor, literal(">"))
+public let openTagColorLiteral = zip(literal("<"), charP, literal(":"), hexColor, literal(">"))
     .map { _, c, _, hex, _ -> Tag in
         guard let color = UIColor(hex: String(hex)) else { return .none }
         switch c {
@@ -34,13 +34,13 @@ public let openTagColorLiteral = zip(literal("<"), char, literal(":"), hexColor,
     }
 }
 
-public let openTagCustomFontLiteral = zip(literal("<"), customFont, int, literal(">"))
+public let openTagCustomFontLiteral = zip(literal("<"), customFont, intP, literal(">"))
     .map { _, fKey, size, _ -> Tag in
         guard let key = Fonts.shared.fonts[String(fKey)] else { return .none }
         return .f(key, CGFloat(size))
     }
 
-public let closeTagSizeLiteral = zip(literal("</"), char, int, literal(">"))
+public let closeTagSizeLiteral = zip(literal("</"), charP, intP, literal(">"))
     .map { _, c, size, _ -> Tag in
         switch c {
         case "b": return Tag.b(CGFloat(size))
@@ -49,7 +49,7 @@ public let closeTagSizeLiteral = zip(literal("</"), char, int, literal(">"))
         }
     }
 
-public let closeTagLiteral = zip(literal("</"), char, literal(">"))
+public let closeTagLiteral = zip(literal("</"), charP, literal(">"))
     .map { _, c, _ -> Tag in
         switch c {
         case "u": return .u
@@ -58,7 +58,7 @@ public let closeTagLiteral = zip(literal("</"), char, literal(">"))
         }
     }
 
-public let closeTagCustomFontLiteral = zip(literal("</"), customFont, int, literal(">"))
+public let closeTagCustomFontLiteral = zip(literal("</"), customFont, intP, literal(">"))
     .map { _, fKey, size, _ -> Tag in
         guard let key = Fonts.shared.fonts[String(fKey)] else { return .none }
         return .f(key, CGFloat(size))

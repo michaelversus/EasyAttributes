@@ -7,21 +7,21 @@
 
 import Foundation
 
-let int = Parser<Int> { str in
+public let intP = Parser<Int> { str in
   let prefix = str.prefix(while: { ("0"..."9").contains($0) })
   let match = Int(prefix)
   str.removeFirst(prefix.count)
   return match
 }
 
-let double = Parser<Double> { str in
+public let doubleP = Parser<Double> { str in
   let prefix = str.prefix(while: { ("0"..."9").contains($0) || $0 == "." })
   let match = Double(prefix)
   str.removeFirst(prefix.count)
   return match
 }
 
-public let char = Parser<Character> { str in
+public let charP = Parser<Character> { str in
   guard !str.isEmpty else { return nil }
   return str.removeFirst()
 }
@@ -61,7 +61,7 @@ public let oneOrMoreSpaces = prefix(
         $0.isEmpty ? .never : always(())
 }
 
-public let commaOrNewline = char
+public let commaOrNewline = charP
     .flatMap {
         $0 == "," || $0 == "\n" ? always(()) : .never
 }
