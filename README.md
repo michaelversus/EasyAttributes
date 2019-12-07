@@ -98,6 +98,8 @@ class ViewController: UIViewController {
 }
 ```
 ## Result
+iOS 10+
+
 ![Screenshot](https://github.com/michaelversus/EasyAttributes/blob/master/screenshots/CustomFontsLabel.png)
 
 ## Author
