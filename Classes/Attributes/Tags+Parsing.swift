@@ -83,7 +83,7 @@ public let zeroOrMoreNotLT = prefix(while: { $0 != "<" })
         $0.isEmpty ? .never : always(AttributedSubstring(tags: [.none], string: $0))
 }
 
-public let attribute = zip(openTag, zeroOrMoreNotLT, closeTag)
+public let attributeP = zip(openTag, zeroOrMoreNotLT, closeTag)
     .map { ot, str, ct -> AttributedSubstring in
         guard ot == ct else {
             return AttributedSubstring(tags: [.none], string: str.string)
@@ -91,7 +91,7 @@ public let attribute = zip(openTag, zeroOrMoreNotLT, closeTag)
         return AttributedSubstring(tags: [ot], string: str.string)
 }
 
-public let attributeOrNestedAttribute = zip(openTag, oneOf(attribute,zeroOrMoreNotLT), closeTag)
+public let attributeOrNestedAttribute = zip(openTag, oneOf(attributeP,zeroOrMoreNotLT), closeTag)
     .map { ot, str, ct -> AttributedSubstring in
         guard ot == ct else {
             return AttributedSubstring(tags: str.tags, string: str.string)

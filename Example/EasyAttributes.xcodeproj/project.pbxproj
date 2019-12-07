@@ -21,6 +21,10 @@
 		5852B59F239BDE8C009BF8F3 /* OpenTagColorLiteralTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5852B59E239BDE8C009BF8F3 /* OpenTagColorLiteralTests.swift */; };
 		5852B5A4239BDF3E009BF8F3 /* CloseTagCustomFontLiteralTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5852B5A3239BDF3E009BF8F3 /* CloseTagCustomFontLiteralTests.swift */; };
 		5852B5A7239BFA02009BF8F3 /* OpenTagParsingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5852B5A6239BFA02009BF8F3 /* OpenTagParsingTests.swift */; };
+		5852B5AA239C231F009BF8F3 /* CloseTagParsingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5852B5A9239C231F009BF8F3 /* CloseTagParsingTests.swift */; };
+		5852B5AC239C2551009BF8F3 /* ZeroOrMoreNotLTParsing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5852B5AB239C2551009BF8F3 /* ZeroOrMoreNotLTParsing.swift */; };
+		5852B5AE239C27C5009BF8F3 /* AttributeParserTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5852B5AD239C27C5009BF8F3 /* AttributeParserTests.swift */; };
+		5852B5B0239C4D0B009BF8F3 /* AttributeOrNestedAttributeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5852B5AF239C4D0B009BF8F3 /* AttributeOrNestedAttributeTests.swift */; };
 		607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD51AFB9204008FA782 /* AppDelegate.swift */; };
 		607FACD81AFB9204008FA782 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD71AFB9204008FA782 /* ViewController.swift */; };
 		607FACDB1AFB9204008FA782 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 607FACD91AFB9204008FA782 /* Main.storyboard */; };
@@ -61,6 +65,10 @@
 		5852B59E239BDE8C009BF8F3 /* OpenTagColorLiteralTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenTagColorLiteralTests.swift; sourceTree = "<group>"; };
 		5852B5A3239BDF3E009BF8F3 /* CloseTagCustomFontLiteralTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloseTagCustomFontLiteralTests.swift; sourceTree = "<group>"; };
 		5852B5A6239BFA02009BF8F3 /* OpenTagParsingTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenTagParsingTests.swift; sourceTree = "<group>"; };
+		5852B5A9239C231F009BF8F3 /* CloseTagParsingTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloseTagParsingTests.swift; sourceTree = "<group>"; };
+		5852B5AB239C2551009BF8F3 /* ZeroOrMoreNotLTParsing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZeroOrMoreNotLTParsing.swift; sourceTree = "<group>"; };
+		5852B5AD239C27C5009BF8F3 /* AttributeParserTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttributeParserTests.swift; sourceTree = "<group>"; };
+		5852B5AF239C4D0B009BF8F3 /* AttributeOrNestedAttributeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttributeOrNestedAttributeTests.swift; sourceTree = "<group>"; };
 		607FACD01AFB9204008FA782 /* EasyAttributes_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EasyAttributes_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		607FACD41AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		607FACD51AFB9204008FA782 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -141,6 +149,15 @@
 			name = TagCustomFontLiteral;
 			sourceTree = "<group>";
 		};
+		5852B5A8239C2306009BF8F3 /* OpenTagParsing */ = {
+			isa = PBXGroup;
+			children = (
+				5852B5A6239BFA02009BF8F3 /* OpenTagParsingTests.swift */,
+				5852B5A9239C231F009BF8F3 /* CloseTagParsingTests.swift */,
+			);
+			name = OpenTagParsing;
+			sourceTree = "<group>";
+		};
 		607FACC71AFB9204008FA782 = {
 			isa = PBXGroup;
 			children = (
@@ -193,7 +210,10 @@
 				5852B58C239AE9E6009BF8F3 /* CustomFontParserTests.swift */,
 				5852B58E239BA2F6009BF8F3 /* TagTests.swift */,
 				5852B590239BAAAF009BF8F3 /* SpecificParsersTests.swift */,
-				5852B5A6239BFA02009BF8F3 /* OpenTagParsingTests.swift */,
+				5852B5AF239C4D0B009BF8F3 /* AttributeOrNestedAttributeTests.swift */,
+				5852B5AD239C27C5009BF8F3 /* AttributeParserTests.swift */,
+				5852B5AB239C2551009BF8F3 /* ZeroOrMoreNotLTParsing.swift */,
+				5852B5A8239C2306009BF8F3 /* OpenTagParsing */,
 				5852B5A5239BDF47009BF8F3 /* TagCustomFontLiteral */,
 				5852B5A2239BDEF8009BF8F3 /* TagColorLiteral */,
 				5852B59D239BDE63009BF8F3 /* TagLiteral */,
@@ -299,6 +319,7 @@
 					};
 					607FACE41AFB9204008FA782 = {
 						CreatedOnToolsVersion = 6.3.1;
+						DevelopmentTeam = 4N99UJ999D;
 						LastSwiftMigration = 0900;
 						TestTargetID = 607FACCF1AFB9204008FA782;
 					};
@@ -430,14 +451,18 @@
 			files = (
 				5852B58F239BA2F6009BF8F3 /* TagTests.swift in Sources */,
 				5852B59C239BDE54009BF8F3 /* CloseTagLiteralTests.swift in Sources */,
+				5852B5AC239C2551009BF8F3 /* ZeroOrMoreNotLTParsing.swift in Sources */,
 				5852B593239BD379009BF8F3 /* OpenTagCustomFontLiteralTests.swift in Sources */,
 				5852B58D239AE9E6009BF8F3 /* CustomFontParserTests.swift in Sources */,
 				5852B58B239AE0CF009BF8F3 /* FontsTests.swift in Sources */,
 				5852B5A7239BFA02009BF8F3 /* OpenTagParsingTests.swift in Sources */,
 				5852B591239BAAAF009BF8F3 /* SpecificParsersTests.swift in Sources */,
 				5852B59A239BDE17009BF8F3 /* OpenTagLiteralTests.swift in Sources */,
+				5852B5AE239C27C5009BF8F3 /* AttributeParserTests.swift in Sources */,
 				5852B59F239BDE8C009BF8F3 /* OpenTagColorLiteralTests.swift in Sources */,
 				607FACEC1AFB9204008FA782 /* EasyAttributesTests.swift in Sources */,
+				5852B5B0239C4D0B009BF8F3 /* AttributeOrNestedAttributeTests.swift in Sources */,
+				5852B5AA239C231F009BF8F3 /* CloseTagParsingTests.swift in Sources */,
 				5852B597239BDDB2009BF8F3 /* CloseTagSizeLiteralTests.swift in Sources */,
 				5852B595239BDD70009BF8F3 /* OpenTagSizeLiteralTests.swift in Sources */,
 				5852B5A4239BDF3E009BF8F3 /* CloseTagCustomFontLiteralTests.swift in Sources */,
@@ -615,6 +640,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 247C066E96A276DDDBA623D4 /* Pods-EasyAttributes_Tests.debug.xcconfig */;
 			buildSettings = {
+				DEVELOPMENT_TEAM = 4N99UJ999D;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(PLATFORM_DIR)/Developer/Library/Frameworks",
 					"$(inherited)",
@@ -637,6 +663,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 0747C00048C4545B1B1CF4A7 /* Pods-EasyAttributes_Tests.release.xcconfig */;
 			buildSettings = {
+				DEVELOPMENT_TEAM = 4N99UJ999D;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(PLATFORM_DIR)/Developer/Library/Frameworks",
 					"$(inherited)",

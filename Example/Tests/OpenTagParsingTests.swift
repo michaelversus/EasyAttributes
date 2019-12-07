@@ -15,15 +15,53 @@ class OpenTagParsingTests: XCTestCase {
         EasyAttributes.configFonts()
     }
 
-    func testOpenTagCustomFontSucces() {
+    func testOpenTagCustomFontLiteralSucces() {
         let string = "<pr17>add this font</pr17>"
         let result = openTag.run(string)
         XCTAssertEqual(result.match, Tag.f("PermanentMarker-Regular", 17))
         XCTAssertEqual(result.rest, "add this font</pr17>")
     }
     
-    func testOpenTagColorSuccess() {
-        
+    func testOpenTagColorLiteralSuccess() {
+        let string = "<c:ebebeb>add this color</c>"
+        let result = openTag.run(string)
+        XCTAssertEqual(result.rest, "add this color</c>")
+    }
+    
+    func testOpenTagSizeLiteralBSuccess() {
+        let string = "<b13>add this font</b13>"
+        let result = openTag.run(string)
+        XCTAssertEqual(result.match, Tag.b(13))
+        XCTAssertEqual(result.rest, "add this font</b13>")
+    }
+
+    func testOpenTagSizeLiteralISuccess() {
+        let string = "<i13>add this font</i13>"
+        let result = openTag.run(string)
+        XCTAssertEqual(result.match, Tag.i(13))
+        XCTAssertEqual(result.rest, "add this font</i13>")
+    }
+
+    
+    func testOpenTagLiteralSuccess() {
+        let string = "<u>add this style</u>"
+        let result = openTag.run(string)
+        XCTAssertEqual(result.match, Tag.u)
+        XCTAssertEqual(result.rest, "add this style</u>")
+    }
+    
+    func testOpenTagUnknownTagFailure() {
+        let string = "<bb17>add this font</bb17>"
+        let result = openTag.run(string)
+        XCTAssertNil(result.match)
+        XCTAssertEqual(result.rest, "<bb17>add this font</bb17>")
+    }
+    
+    func testOpenTagParsingFailure() {
+        let string = "b17>add this font</b17>"
+        let result = openTag.run(string)
+        XCTAssertNil(result.match)
+        XCTAssertEqual(result.rest, "b17>add this font</b17>")
     }
 
 }
