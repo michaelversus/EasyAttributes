@@ -1,6 +1,8 @@
 coverage_service: cobertura_xml
-xcodeproj: EasyAttributes.xcodeproj
+workspace: Example/EasyAttributes.xcworkspace
+xcodeproj: Example/EasyAttributes.xcodeproj
 scheme: EasyAttributes-Example
-output_directory: reports
+source_directory: Classes/*
+output_directory: Example/reports
 ignore:
-  - EasyAttributes/*
+  - Example/Pods/*

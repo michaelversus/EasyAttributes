@@ -1,0 +1,47 @@
+<?xml version="1.0"?>
+<!DOCTYPE coverage SYSTEM "http://cobertura.sourceforge.net/xml/coverage-04.dtd">
+<coverage line-rate="1.0000000000000000" branch-rate="1.0000000000000000" lines-covered="24" lines-valid="24" branches-covered="0" branches-valid="0" complexity="0.0" timestamp="1575757456" version="Slather 2.4.7">
+  <sources>
+    <source>/Users/mickaragiorgos/Documents/Libraries/EasyAttributes/EasyAttributes</source>
+  </sources>
+  <packages>
+    <package name="Example.EasyAttributes" line-rate="1.0000000000000000" branch-rate="1.0000000000000000" complexity="0.0">
+      <classes>
+        <class name="AppDelegate" filename="Example/EasyAttributes/AppDelegate.swift" line-rate="1.0000000000000000" branch-rate="1.0000000000000000" complexity="0.0">
+          <methods/>
+          <lines>
+            <line number="16" branch="false" hits="1"/>
+            <line number="17" branch="false" hits="1"/>
+            <line number="18" branch="false" hits="1"/>
+            <line number="19" branch="false" hits="1"/>
+          </lines>
+        </class>
+        <class name="ViewController" filename="Example/EasyAttributes/ViewController.swift" line-rate="1.0000000000000000" branch-rate="1.0000000000000000" complexity="0.0">
+          <methods/>
+          <lines>
+            <line number="14" branch="false" hits="1"/>
+            <line number="15" branch="false" hits="1"/>
+            <line number="16" branch="false" hits="1"/>
+            <line number="17" branch="false" hits="1"/>
+            <line number="18" branch="false" hits="1"/>
+            <line number="19" branch="false" hits="1"/>
+            <line number="20" branch="false" hits="1"/>
+            <line number="21" branch="false" hits="1"/>
+            <line number="22" branch="false" hits="1"/>
+            <line number="23" branch="false" hits="1"/>
+            <line number="24" branch="false" hits="1"/>
+            <line number="25" branch="false" hits="1"/>
+            <line number="27" branch="false" hits="1"/>
+            <line number="28" branch="false" hits="1"/>
+            <line number="29" branch="false" hits="1"/>
+            <line number="30" branch="false" hits="1"/>
+            <line number="31" branch="false" hits="1"/>
+            <line number="32" branch="false" hits="1"/>
+            <line number="33" branch="false" hits="1"/>
+            <line number="34" branch="false" hits="1"/>
+          </lines>
+        </class>
+      </classes>
+    </package>
+  </packages>
+</coverage>
