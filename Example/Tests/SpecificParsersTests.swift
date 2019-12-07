@@ -92,4 +92,30 @@ class SpecificParsersTests: XCTestCase {
         XCTAssertNil(result.match)
         XCTAssertEqual(result.rest, Substring(string))
     }
+    
+    func testParserPrefixSuccess() {
+        let p: Parser<Substring> = prefix(while: { $0 == "c" })
+        let result = p.run("ccccc e")
+        XCTAssertEqual(result.match, Substring("ccccc"))
+        XCTAssertEqual(result.rest, " e")
+    }
+    
+    func testParserPrefixFailure() {
+        let p: Parser<Substring> = prefix(while: { $0 == "c" })
+        let result = p.run(" e")
+        XCTAssertEqual(result.match, "")
+        XCTAssertEqual(result.rest, " e")
+    }
+    
+    func testZeroOrMoreSpacesSuccess() {
+        let string = "    add this font</b>"
+        let result = zeroOrMoreSpaces.run(string)
+        XCTAssertEqual(result.rest, Substring("add this font</b>"))
+    }
+    
+    func testZeroOrMoreSpacesFailure() {
+        let string = "add this font</b>"
+        let result = zeroOrMoreSpaces.run(string)
+        XCTAssertEqual(result.rest, Substring("add this font</b>"))
+    }
 }
