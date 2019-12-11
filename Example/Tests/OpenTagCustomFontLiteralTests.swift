@@ -13,7 +13,7 @@ class OpenTagCustomFontLiteralTests: XCTestCase {
     
     override class func setUp() {
         super.setUp()
-        EasyAttributes.configFonts()
+        EasyAttributes.configFonts(with: ["pr":"PermanentMarker-Regular"])
     }
     
     

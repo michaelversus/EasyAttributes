@@ -64,9 +64,6 @@ If you'd like to use custom fonts you must:
 1) register the custom fonts.
 You can find instructions here: https://developer.apple.com/documentation/uikit/text_display_and_fonts/adding_a_custom_font_to_your_app
 
-2) provide a Fonts.plist as in the example app
-![Screenshot](https://github.com/michaelversus/EasyAttributes/blob/master/screenshots/fonts.png)
-
 then inside ViewController...
 
 ```swift
@@ -82,7 +79,7 @@ class ViewController: UIViewController {
         lbl.textColor = .black
         lbl.textAlignment = .center
         lbl.font = UIFont.systemFont(ofSize: 16)
-        EasyAttributes.configFonts()
+        EasyAttributes.configFonts(with: ["pr":"PermanentMarker-Regular"])
         let string = "Hello <c:ebebeb>there</c> <b26><u>I am a bold string</u></b26> and <i14>i am an italic string</i14> Hello there <u>again</u> <pr36>this is custom font string</pr36>"
         lbl.attributedText = string.toAttributed()
         return lbl
