@@ -16,7 +16,7 @@ class AttributeOrNestedAttributeTests: XCTestCase {
     }
     
     override func setUp() {
-        EasyAttributes.configFonts()
+        EasyAttributes.configFonts(with: ["pr":"PermanentMarker-Regular"])
     }
 
     func invalidTagsFailure() {

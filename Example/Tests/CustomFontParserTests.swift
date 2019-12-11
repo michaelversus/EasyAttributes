@@ -12,7 +12,7 @@ import EasyAttributes
 class CustomFontParserTests: XCTestCase {
 
     func testValidString() {
-        EasyAttributes.configFonts()
+        EasyAttributes.configFonts(with: ["pr":"PermanentMarker-Regular"])
         
         let string = "pr12>add this font</pr12>"
         let result = customFont.run(string)

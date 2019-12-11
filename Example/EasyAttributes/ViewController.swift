@@ -18,7 +18,7 @@ class ViewController: UIViewController {
         lbl.textColor = .black
         lbl.textAlignment = .center
         lbl.font = UIFont.systemFont(ofSize: 16)
-        EasyAttributes.configFonts()
+        EasyAttributes.configFonts(with: ["pr":"PermanentMarker-Regular"])
         let string = "Hello <c:ebebeb><b26><u>I am a bold colored underlined string </u></b26></c> and <i14><u>i am an italic string underlined</u></i14> Hello there <u>again</u>  Hello there <u>again</u> <pr36>this is custom font string</pr36>"
         lbl.attributedText = string.toAttributed()
         return lbl

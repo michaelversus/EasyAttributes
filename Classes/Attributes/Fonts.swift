@@ -7,7 +7,7 @@
 
 import Foundation
 
-public struct Fonts: Decodable {
+public struct Fonts {
     public let fonts: [String:String]
     
     public static let shared: Fonts = {
@@ -16,10 +16,8 @@ public struct Fonts: Decodable {
     
     public static var _shared: Fonts?
     
-    public static func registerPlist(url: URL) {
-        let data = try! Data(contentsOf: url)
-        let decoder = PropertyListDecoder()
-        _shared = try! decoder.decode(Fonts.self, from: data)
+    public static func register(fonts: [String:String]) {
+        _shared = Fonts(fonts: fonts)
     }
 }
 

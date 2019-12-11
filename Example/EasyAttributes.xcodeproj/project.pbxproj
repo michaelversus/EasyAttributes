@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		5852B585239AC487009BF8F3 /* Fonts.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5852B584239AC487009BF8F3 /* Fonts.plist */; };
 		5852B588239AC5B7009BF8F3 /* PermanentMarker-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5852B587239AC5A3009BF8F3 /* PermanentMarker-Regular.ttf */; };
 		5852B58B239AE0CF009BF8F3 /* FontsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5852B589239AE0C7009BF8F3 /* FontsTests.swift */; };
 		5852B58D239AE9E6009BF8F3 /* CustomFontParserTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5852B58C239AE9E6009BF8F3 /* CustomFontParserTests.swift */; };
@@ -51,7 +50,6 @@
 		233C2A85AF59C675CD092A19 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
 		247C066E96A276DDDBA623D4 /* Pods-EasyAttributes_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EasyAttributes_Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-EasyAttributes_Tests/Pods-EasyAttributes_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		3BE8C815C86412A5FD9D3744 /* Pods_EasyAttributes_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EasyAttributes_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		5852B584239AC487009BF8F3 /* Fonts.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Fonts.plist; sourceTree = "<group>"; };
 		5852B587239AC5A3009BF8F3 /* PermanentMarker-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "PermanentMarker-Regular.ttf"; sourceTree = "<group>"; };
 		5852B589239AE0C7009BF8F3 /* FontsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontsTests.swift; sourceTree = "<group>"; };
 		5852B58C239AE9E6009BF8F3 /* CustomFontParserTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomFontParserTests.swift; sourceTree = "<group>"; };
@@ -109,7 +107,6 @@
 			isa = PBXGroup;
 			children = (
 				5852B587239AC5A3009BF8F3 /* PermanentMarker-Regular.ttf */,
-				5852B584239AC487009BF8F3 /* Fonts.plist */,
 			);
 			name = fonts;
 			sourceTree = "<group>";
@@ -353,7 +350,6 @@
 				607FACE01AFB9204008FA782 /* LaunchScreen.xib in Resources */,
 				607FACDD1AFB9204008FA782 /* Images.xcassets in Resources */,
 				5852B588239AC5B7009BF8F3 /* PermanentMarker-Regular.ttf in Resources */,
-				5852B585239AC487009BF8F3 /* Fonts.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

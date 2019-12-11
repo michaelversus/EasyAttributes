@@ -12,7 +12,7 @@ import EasyAttributes
 class AttributeParserTests: XCTestCase {
 
     override func setUp() {
-        EasyAttributes.configFonts()
+        EasyAttributes.configFonts(with: ["pr":"PermanentMarker-Regular"])
     }
 
     func testBoldAttributeSuccess() {
