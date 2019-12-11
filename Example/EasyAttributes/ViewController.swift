@@ -19,7 +19,7 @@ class ViewController: UIViewController {
         lbl.textAlignment = .center
         lbl.font = UIFont.systemFont(ofSize: 16)
         EasyAttributes.configFonts()
-        let string = "Hello <c:ebebeb>there</c> <b26><u>I am a bold string</u></b26> and <i14>i am an italic string</i14> Hello there <u>again</u> <pr36>this is custom font string</pr36>"
+        let string = "Hello <c:ebebeb><b26><u>I am a bold colored underlined string </u></b26></c> and <i14><u>i am an italic string underlined</u></i14> Hello there <u>again</u>  Hello there <u>again</u> <pr36>this is custom font string</pr36>"
         lbl.attributedText = string.toAttributed()
         return lbl
     }()

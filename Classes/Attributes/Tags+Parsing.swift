@@ -91,7 +91,10 @@ public let attributeP = zip(openTag, zeroOrMoreNotLT, closeTag)
         return AttributedSubstring(tags: [ot], string: str.string)
 }
 
-public let attributeOrNestedAttribute = zip(openTag, oneOf(attributeP,zeroOrMoreNotLT), closeTag)
+public let attributeOrNestedAttribute =
+    zip(openTag,
+        oneOf(attributeP,zeroOrMoreNotLT),
+        closeTag)
     .map { ot, str, ct -> AttributedSubstring in
         guard ot == ct else {
             return AttributedSubstring(tags: str.tags, string: str.string)
@@ -104,7 +107,23 @@ public let attributeOrNestedAttribute = zip(openTag, oneOf(attributeP,zeroOrMore
         return AttributedSubstring(tags: newTags, string: str.string)
 }
 
-public let wordOrAttribute = oneOf(attributeOrNestedAttribute, zeroOrMoreNotLT)
+public let attributedOrDoubleNestedAttributed =
+    zip(openTag,
+        oneOf(attributeOrNestedAttribute,attributeP),
+        closeTag)
+    .map { ot, str, ct -> AttributedSubstring in
+        guard ot == ct else {
+            return AttributedSubstring(tags: str.tags, string: str.string)
+        }
+        guard str.tags != [.none] else {
+            return AttributedSubstring(tags: [ot], string: str.string)
+        }
+        var newTags = str.tags
+        newTags.append(ot)
+        return AttributedSubstring(tags: newTags, string: str.string)
+}
+
+public let wordOrAttribute = oneOf(attributedOrDoubleNestedAttributed, attributeOrNestedAttribute, zeroOrMoreNotLT)
 
 public let wordsOrAttributes = zeroOrMore(wordOrAttribute)
 
