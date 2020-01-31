@@ -48,14 +48,14 @@ class TagTests: XCTestCase {
     }
     
     func testTagFValid() throws {
-        let f = Tag.f("PermanentMarker-Regular", 14)
+        let f = Tag.f("PermanentMarker-Regular", 14, nil)
         guard let expectedFont = UIFont(name: "PermanentMarker-Regular", size: 14) else { throw Error.nilError }
         guard let font = f.attributes?[NSAttributedString.Key.font] as? UIFont else { throw Error.nilError }
         XCTAssertEqual(expectedFont, font)
     }
     
     func testTagFInvalid() throws {
-        let f = Tag.f("dsasdsa", 14)
+        let f = Tag.f("dsasdsa", 14, nil)
         let expectedFont = UIFont.systemFont(ofSize: 14)
         guard let font = f.attributes?[NSAttributedString.Key.font] as? UIFont else { throw Error.nilError }
         XCTAssertEqual(expectedFont, font)

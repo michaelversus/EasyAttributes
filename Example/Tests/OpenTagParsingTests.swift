@@ -18,7 +18,7 @@ class OpenTagParsingTests: XCTestCase {
     func testOpenTagCustomFontLiteralSucces() {
         let string = "<pr17>add this font</pr17>"
         let result = openTag.run(string)
-        XCTAssertEqual(result.match, Tag.f("PermanentMarker-Regular", 17))
+        XCTAssertEqual(result.match, Tag.f("PermanentMarker-Regular", 17, nil))
         XCTAssertEqual(result.rest, "add this font</pr17>")
     }
     

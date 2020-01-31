@@ -8,7 +8,7 @@
 import Foundation
 
 public struct EasyAttributes {
-    public static func configFonts(with fonts: [String:String]) {
-        Fonts.register(fonts: fonts)
+    public static func configFonts(with fonts: [String:String], fontAdaptationFactor: CGFloat? = nil) {
+        Fonts.register(fonts: fonts, fontAdaptationFactor: fontAdaptationFactor)
     }
 }

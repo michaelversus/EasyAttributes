@@ -59,7 +59,7 @@ class AttributeParserTests: XCTestCase {
     func testCustomFontAttributeSuccess() {
         let string = "<pr12>pr string</pr12> after"
         let result = attributeP.run(string)
-        XCTAssertEqual(result.match, AttributedSubstring(tags: [Tag.f("PermanentMarker-Regular", 12)], string: "pr string"))
+        XCTAssertEqual(result.match, AttributedSubstring(tags: [Tag.f("PermanentMarker-Regular", 12, nil)], string: "pr string"))
         XCTAssertEqual(result.rest, " after")
     }
     

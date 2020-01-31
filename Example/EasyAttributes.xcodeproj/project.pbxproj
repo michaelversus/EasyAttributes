@@ -7,7 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		5852B588239AC5B7009BF8F3 /* PermanentMarker-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5852B587239AC5A3009BF8F3 /* PermanentMarker-Regular.ttf */; };
+		583D227523E48ECE0064EB21 /* PermanentMarker-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5852B587239AC5A3009BF8F3 /* PermanentMarker-Regular.ttf */; };
+		583D227623E48ECF0064EB21 /* PermanentMarker-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5852B587239AC5A3009BF8F3 /* PermanentMarker-Regular.ttf */; };
 		5852B58B239AE0CF009BF8F3 /* FontsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5852B589239AE0C7009BF8F3 /* FontsTests.swift */; };
 		5852B58D239AE9E6009BF8F3 /* CustomFontParserTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5852B58C239AE9E6009BF8F3 /* CustomFontParserTests.swift */; };
 		5852B58F239BA2F6009BF8F3 /* TagTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5852B58E239BA2F6009BF8F3 /* TagTests.swift */; };
@@ -348,8 +349,8 @@
 			files = (
 				607FACDB1AFB9204008FA782 /* Main.storyboard in Resources */,
 				607FACE01AFB9204008FA782 /* LaunchScreen.xib in Resources */,
+				583D227523E48ECE0064EB21 /* PermanentMarker-Regular.ttf in Resources */,
 				607FACDD1AFB9204008FA782 /* Images.xcassets in Resources */,
-				5852B588239AC5B7009BF8F3 /* PermanentMarker-Regular.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -357,6 +358,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				583D227623E48ECF0064EB21 /* PermanentMarker-Regular.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

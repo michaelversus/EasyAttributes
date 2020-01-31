@@ -49,7 +49,7 @@ class AttributeOrNestedAttributeTests: XCTestCase {
     func testCustomFontSuccess() {
         let string = "<pr12>pr string</pr12> after"
         let result = attributeOrNestedAttribute.run(string)
-        XCTAssertEqual(result.match, AttributedSubstring(tags: [Tag.f("PermanentMarker-Regular", 12)], string: "pr string"))
+        XCTAssertEqual(result.match, AttributedSubstring(tags: [Tag.f("PermanentMarker-Regular", 12, nil)], string: "pr string"))
         XCTAssertEqual(result.rest, " after")
     }
     
@@ -63,7 +63,7 @@ class AttributeOrNestedAttributeTests: XCTestCase {
     func testTwoNestedFontsSuccess() {
         let string = "<b13><pr14>pr string</pr14></b13> after"
         let result = attributeOrNestedAttribute.run(string)
-        XCTAssertEqual(result.match, AttributedSubstring(tags: [ Tag.f("PermanentMarker-Regular", 14), Tag.b(13)], string: "pr string"))
+        XCTAssertEqual(result.match, AttributedSubstring(tags: [ Tag.f("PermanentMarker-Regular", 14, nil), Tag.b(13)], string: "pr string"))
         XCTAssertEqual(result.rest, " after")
     }
     

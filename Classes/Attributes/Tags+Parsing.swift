@@ -38,7 +38,7 @@ public let openTagColorLiteral = zip(literal("<"), charP, literal(":"), hexColor
 public let openTagCustomFontLiteral = zip(literal("<"), customFont, intP, literal(">"))
     .map { _, fKey, size, _ -> Tag in
         guard let key = Fonts.shared.fonts[String(fKey)] else { return .none }
-        return .f(key, CGFloat(size))
+        return .f(key, CGFloat(size), Fonts.shared.fontAdaptationFactor)
     }
 
 public let closeTagSizeLiteral = zip(literal("</"), charP, intP, literal(">"))
@@ -63,7 +63,7 @@ public let closeTagLiteral = zip(literal("</"), charP, literal(">"))
 public let closeTagCustomFontLiteral = zip(literal("</"), customFont, intP, literal(">"))
     .map { _, fKey, size, _ -> Tag in
         guard let key = Fonts.shared.fonts[String(fKey)] else { return .none }
-        return .f(key, CGFloat(size))
+        return .f(key, CGFloat(size), Fonts.shared.fontAdaptationFactor)
     }
 
 public let openTag = oneOf(

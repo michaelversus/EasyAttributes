@@ -18,7 +18,7 @@ class CloseTagParsingTests: XCTestCase {
     func testCloseTagCustomFontLiteralSucces() {
         let string = "</pr17> close this"
         let result = closeTag.run(string)
-        XCTAssertEqual(result.match, Tag.f("PermanentMarker-Regular", 17))
+        XCTAssertEqual(result.match, Tag.f("PermanentMarker-Regular", 17, nil))
         XCTAssertEqual(result.rest, " close this")
     }
     

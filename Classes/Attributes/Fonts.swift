@@ -9,15 +9,16 @@ import Foundation
 
 public struct Fonts {
     public let fonts: [String:String]
+    public let fontAdaptationFactor:CGFloat?
     
-    public static let shared: Fonts = {
+    public static var shared: Fonts {
         return _shared!
-    }()
+    }
     
     public static var _shared: Fonts?
     
-    public static func register(fonts: [String:String]) {
-        _shared = Fonts(fonts: fonts)
+    public static func register(fonts: [String:String], fontAdaptationFactor: CGFloat? = nil) {
+        _shared = Fonts(fonts: fonts, fontAdaptationFactor: fontAdaptationFactor)
     }
 }
 
