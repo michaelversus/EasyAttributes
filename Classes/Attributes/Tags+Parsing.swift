@@ -11,6 +11,7 @@ import UIKit
 public let openTagSizeLiteral = zip(literal("<"), charP, intP, literal(">"))
     .map { _, c, size, _ -> Tag in
         switch c {
+        case "s": return Tag.s(CGFloat(size))
         case "b": return Tag.b(CGFloat(size))
         case "i": return Tag.i(CGFloat(size))
         default: return Tag.none
@@ -43,6 +44,7 @@ public let openTagCustomFontLiteral = zip(literal("<"), customFont, intP, litera
 public let closeTagSizeLiteral = zip(literal("</"), charP, intP, literal(">"))
     .map { _, c, size, _ -> Tag in
         switch c {
+        case "s": return Tag.s(CGFloat(size))
         case "b": return Tag.b(CGFloat(size))
         case "i": return Tag.i(CGFloat(size))
         default: return Tag.none

@@ -29,6 +29,13 @@ class AttributeParserTests: XCTestCase {
         XCTAssertEqual(result.rest, " after")
     }
     
+    func testSystemAttributeSuccess() {
+        let string = "<s12>system string</s12> after"
+        let result = attributeP.run(string)
+        XCTAssertEqual(result.match, AttributedSubstring(tags: [Tag.s(12)], string: "system string"))
+        XCTAssertEqual(result.rest, " after")
+    }
+    
     func testUnderlinedAttributeSuccess() {
         let string = "<u>underlined string</u> after"
         let result = attributeP.run(string)

@@ -34,6 +34,13 @@ class OpenTagParsingTests: XCTestCase {
         XCTAssertEqual(result.match, Tag.b(13))
         XCTAssertEqual(result.rest, "add this font</b13>")
     }
+    
+    func testOpenTagSizeLiteralSSuccess() {
+        let string = "<s12>add this font</s12>"
+        let result = openTag.run(string)
+        XCTAssertEqual(result.match, Tag.s(12))
+        XCTAssertEqual(result.rest, "add this font</s12>")
+    }
 
     func testOpenTagSizeLiteralISuccess() {
         let string = "<i13>add this font</i13>"

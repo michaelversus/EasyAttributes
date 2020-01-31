@@ -7,6 +7,7 @@
 import UIKit
 
 public enum Tag {
+    case s(CGFloat)
     case b(CGFloat)
     case i(CGFloat)
     case c(UIColor?)
@@ -16,6 +17,8 @@ public enum Tag {
     
     public var attributes: [NSAttributedString.Key: Any]? {
         switch self {
+        case .s(let size):
+            return [.font: UIFont.systemFont(ofSize: size)]
         case .b(let size):
             return [.font: UIFont.boldSystemFont(ofSize: size)]
         case .i(let size):
@@ -35,6 +38,8 @@ public enum Tag {
 extension Tag: Equatable {
     public static func ==(lhs: Tag, rhs: Tag) -> Bool {
         switch (lhs, rhs) {
+        case (let .s(lhsSize), let .s(rhsSize)):
+            return lhsSize == rhsSize
         case (let .b(lhsSize), let .b(rhsSize)):
             return lhsSize == rhsSize
         case (let .i(lhsSize), let .i(rhsSize)):

@@ -36,6 +36,13 @@ class CloseTagParsingTests: XCTestCase {
         XCTAssertEqual(result.rest, " close this")
     }
     
+    func testCloseTagSizeLiteralSSuccess() {
+        let string = "</s13> close this"
+        let result = closeTag.run(string)
+        XCTAssertEqual(result.match, Tag.s(13))
+        XCTAssertEqual(result.rest, " close this")
+    }
+    
     func testCloseTagLiteralUSuccess() {
         let string = "</u> close this"
         let result = closeTag.run(string)
