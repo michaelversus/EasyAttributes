@@ -33,7 +33,7 @@ public enum Tag {
                 return [.font: UIFont(name: fName, size: size) ?? UIFont.systemFont(ofSize: size)]
             }
         case .u:
-            return [.underlineStyle: NSUnderlineStyle.styleSingle.rawValue]
+            return [.underlineStyle: NSUnderlineStyle.single.rawValue]
         case .none: return nil
         }
     }

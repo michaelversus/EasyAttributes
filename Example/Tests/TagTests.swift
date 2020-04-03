@@ -63,7 +63,7 @@ class TagTests: XCTestCase {
     
     func testTagU() throws {
         let u = Tag.u
-        let expectedStyle = NSUnderlineStyle.styleSingle.rawValue
+        let expectedStyle = NSUnderlineStyle.single.rawValue
         guard
             let style = u.attributes?[NSAttributedString.Key.underlineStyle] as? Int
         else { throw Error.nilError }

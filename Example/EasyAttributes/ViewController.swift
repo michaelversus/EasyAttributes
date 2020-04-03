@@ -21,7 +21,6 @@ class ViewController: UIViewController {
         EasyAttributes.configFonts(with: ["pr":"PermanentMarker-Regular"], fontAdaptationFactor: 2)
         let string = "Hello <c:ebebeb><b26><u>I am a bold colored underlined string </u></b26></c> and <i14><u>i am an italic string underlined</u></i14> Hello there <u>again</u>  Hello there <u>again</u> <pr36>this is custom font string</pr36><s23> System string</s23>"
         lbl.attributedText = string.toAttributed()
-        debugPrint(string.toAttributed())
         return lbl
     }()
     
