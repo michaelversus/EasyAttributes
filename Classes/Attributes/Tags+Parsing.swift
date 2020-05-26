@@ -151,13 +151,13 @@ public let wordOrAttribute = oneOf(attributedOrDoubleNestedAttributed, attribute
 public let wordsOrAttributes = zeroOrMore(wordOrAttribute)
 
 extension Array where Element == AttributedSubstring {
-    public func build() -> NSAttributedString {
+    public func build(with linkAttributes: [NSAttributedString.Key: Any]? = nil) -> NSAttributedString {
         var location = 0
         return self.reduce(into: NSMutableAttributedString()) { r, attr in
             location += attr.string.count
             if let attributes = attr.tags.attributes, attributes.keys.contains(.link) {
                 let linkTag: String = attributes[NSAttributedString.Key.link] as! String
-                r.append(NSAttributedString(string: String(attr.string)))
+                r.append(NSAttributedString(string: String(attr.string), attributes: linkAttributes))
                 r.addAttribute(.link, value: "easy://\(linkTag)", range: NSRange(location: location - attr.string.count, length: attr.string.count))
             } else {
                 r.append(
@@ -184,8 +184,8 @@ extension Array where Element == Tag {
 }
 
 extension String {
-    public func toAttributed() -> NSAttributedString? {
+    public func toAttributed(with linkAttributes: [NSAttributedString.Key: Any]? = nil) -> NSAttributedString? {
         let attrStrings = wordsOrAttributes.run(self).match
-        return attrStrings?.build()
+        return attrStrings?.build(with: linkAttributes)
     }
 }
