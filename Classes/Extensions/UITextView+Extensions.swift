@@ -9,16 +9,16 @@ import UIKit
 
 extension UITextView {
     public convenience init(easyAttributesString: String,
-                     font: UIFont,
-                     textColor: UIColor,
-                     backgroundColor: UIColor,
-                     textAlignment: NSTextAlignment,
-                     linkColor: UIColor,
-                     isEditable: Bool = false,
-                     isScrollEnabled: Bool = false,
-                     isSelectable: Bool = true,
-                     textContainerInset: UIEdgeInsets = .zero,
-                     lineFragmentPadding: CGFloat = 0
+                            font: UIFont,
+                            textColor: UIColor,
+                            backgroundColor: UIColor,
+                            textAlignment: NSTextAlignment,
+                            linkColor: UIColor,
+                            isEditable: Bool = false,
+                            isScrollEnabled: Bool = false,
+                            isSelectable: Bool = true,
+                            textContainerInset: UIEdgeInsets = .zero,
+                            lineFragmentPadding: CGFloat = 0
     ) {
         self.init()
         let paragraph = NSMutableParagraphStyle()
@@ -46,6 +46,31 @@ extension UITextView {
         self.isUserInteractionEnabled = true
         self.textContainerInset = textContainerInset
         self.textContainer.lineFragmentPadding = lineFragmentPadding
+        self.sizeToFit()
+    }
+    
+    public func update(easyAttributesString: String,
+                       font: UIFont,
+                       textColor: UIColor,
+                       backgroundColor: UIColor,
+                       textAlignment: NSTextAlignment,
+                       linkColor: UIColor
+                       ) {
+        let paragraph = NSMutableParagraphStyle()
+        paragraph.alignment = textAlignment
+        let mainAttributes: [NSAttributedString.Key: Any] = [
+            .font: font,
+            .foregroundColor: textColor,
+            .paragraphStyle: paragraph
+        ]
+        let linkTextAttributes: [NSAttributedString.Key: Any] = [
+            .font: font,
+            .foregroundColor: linkColor,
+            .underlineStyle: NSUnderlineStyle.single.rawValue,
+            .underlineColor: linkColor
+        ]
+        self.linkTextAttributes = linkTextAttributes
+        self.attributedText = easyAttributesString.toAttributed(with: mainAttributes)
         self.sizeToFit()
     }
 }
