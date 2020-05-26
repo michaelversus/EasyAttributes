@@ -8,7 +8,7 @@
 import Foundation
 
 extension UIColor {
-    public convenience init?(hex: String) {
+    convenience init?(hex: String) {
         guard hex.count == 6 else { return nil }
         let r, g, b, a: CGFloat
         let scanner = Scanner(string: hex)

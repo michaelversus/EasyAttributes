@@ -8,6 +8,8 @@
 import Foundation
 import UIKit
 
+//MARK: - Open Tag
+
 public let openTagSizeLiteral = zip(literal("<"), charP, intP, literal(">"))
     .map { _, c, size, _ -> Tag in
         switch c {
@@ -41,6 +43,21 @@ public let openTagCustomFontLiteral = zip(literal("<"), customFont, intP, litera
         return .f(key, CGFloat(size), Fonts.shared.fontAdaptationFactor)
     }
 
+let zeroOrMoreNotGTPlain = prefix(while: { $0 != ">" })
+    .flatMap {
+        $0.isEmpty ? .never : always($0)
+}
+
+public let openTagActionLiteral = zip(literal("<"), charP, literal(":"), zeroOrMoreNotGTPlain, literal(">"))
+    .map { _, c, _, actionTag, _ -> Tag in
+        switch c {
+        case "a": return .a(String(actionTag))
+        default: return .none
+        }
+}
+
+//MARK: - Close Tag
+
 public let closeTagSizeLiteral = zip(literal("</"), charP, intP, literal(">"))
     .map { _, c, size, _ -> Tag in
         switch c {
@@ -56,6 +73,7 @@ public let closeTagLiteral = zip(literal("</"), charP, literal(">"))
         switch c {
         case "u": return .u
         case "c": return .c(nil)
+        case "a": return .a(nil)
         default: return .none
         }
     }
@@ -66,9 +84,12 @@ public let closeTagCustomFontLiteral = zip(literal("</"), customFont, intP, lite
         return .f(key, CGFloat(size), Fonts.shared.fontAdaptationFactor)
     }
 
+//MARK: - Combine ALL
+
 public let openTag = oneOf(
     openTagCustomFontLiteral,
     openTagColorLiteral,
+    openTagActionLiteral,
     openTagSizeLiteral,
     openTagLiteral
 )
@@ -131,11 +152,21 @@ public let wordsOrAttributes = zeroOrMore(wordOrAttribute)
 
 extension Array where Element == AttributedSubstring {
     public func build() -> NSAttributedString {
+        var location = 0
         return self.reduce(into: NSMutableAttributedString()) { r, attr in
-            r.append(
-                NSAttributedString(
-                    string: String(attr.string),
-                    attributes: attr.tags.attributes))
+            location += attr.string.count
+            if let attributes = attr.tags.attributes, attributes.keys.contains(.link) {
+                let linkTag: String = attributes[NSAttributedString.Key.link] as! String
+                r.append(NSAttributedString(string: String(attr.string)))
+                r.addAttribute(.link, value: "easy://\(linkTag)", range: NSRange(location: location - attr.string.count, length: attr.string.count))
+            } else {
+                r.append(
+                    NSAttributedString(
+                        string: String(attr.string),
+                        attributes: attr.tags.attributes
+                    )
+                )
+            }
         }
     }
 }
@@ -158,4 +189,3 @@ extension String {
         return attrStrings?.build()
     }
 }
-

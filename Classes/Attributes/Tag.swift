@@ -13,6 +13,7 @@ public enum Tag {
     case c(UIColor?)
     case f(String, CGFloat, CGFloat?)
     case u
+    case a(String?)
     case none
     
     public var attributes: [NSAttributedString.Key: Any]? {
@@ -34,6 +35,9 @@ public enum Tag {
             }
         case .u:
             return [.underlineStyle: NSUnderlineStyle.single.rawValue]
+        case .a(let tag):
+            let str = tag ?? ""
+            return [NSAttributedString.Key.link: str as Any]
         case .none: return nil
         }
     }
@@ -56,6 +60,8 @@ extension Tag: Equatable {
             return true
         case (.none, .none):
             return true
+        case (let .a(lhsTag), let .a(rhsTag)):
+            return lhsTag != nil && rhsTag == nil
         default:
             return false
         }
