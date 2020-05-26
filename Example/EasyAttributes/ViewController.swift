@@ -27,11 +27,11 @@ class ViewController: UIViewController {
     
     lazy var textView: UITextView = {
         EasyAttributes.configFonts(with: ["pr":"PermanentMarker-Regular"], fontAdaptationFactor: 1.1)
-        let string = "<s25>System string click </s25><a:chat>here</a>"
+        let string = "<pr25>System string click </pr25><a:chat>here</a>"
         
         let textView = UITextView(
             easyAttributesString: string,
-            font: UIFont.systemFont(ofSize: 24),
+            font: UIFont(name: "PermanentMarker-Regular", size: 25)!,
             textColor: .black,
             backgroundColor: .white,
             textAlignment: .left,
