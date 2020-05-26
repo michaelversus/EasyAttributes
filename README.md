@@ -98,6 +98,53 @@ class ViewController: UIViewController {
 ## Result
 ![Screenshot](https://github.com/michaelversus/EasyAttributes/blob/master/screenshots/CustomFontsLabel.png)
 
+## UITextView clickable links
+
+```swift
+import UIKit
+import EasyAttributes
+
+class ViewController: UIViewController {
+
+    lazy var textView: UITextView = {
+        EasyAttributes.configFonts(with: ["pr":"PermanentMarker-Regular"], fontAdaptationFactor: 1.1)
+        let string = "<pr25>System string click </pr25><a:chat>here</a>"
+        
+        let textView = UITextView(
+            easyAttributesString: string,
+            font: UIFont(name: "PermanentMarker-Regular", size: 25)!,
+            textColor: .black,
+            backgroundColor: .white,
+            textAlignment: .left,
+            linkColor: .red
+        )
+        textView.translatesAutoresizingMaskIntoConstraints = false
+        textView.delegate = self
+        return textView
+    }()
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        view.addSubview(textView)
+        textView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20).isActive = true
+        textView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20).isActive = true
+        textView.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
+        textView.heightAnchor.constraint(equalToConstant: 400).isActive = true
+    }
+}
+
+extension ViewController: UITextViewDelegate {
+    func textView(_ textView: UITextView, shouldInteractWith URL: URL, in characterRange: NSRange) -> Bool {
+        if URL.absoluteString == "easy://chat" {
+            debugPrint("clicked a link")
+        }
+        return false
+    }
+}
+```
+## Result
+![Screenshot](https://github.com/michaelversus/EasyAttributes/blob/master/screenshots/UITextViewLinks.png)
+
 ## Author
 
 Michalis Karagiorgos, michaliskarag@gmail.com
