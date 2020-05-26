@@ -23,6 +23,7 @@
 		A5FDC4BD9BF616849DC562279738E735 /* Parser+flatMap.swift in Sources */ = {isa = PBXBuildFile; fileRef = B29A8C02A7D87FB30E55B79294BC639A /* Parser+flatMap.swift */; };
 		B0C89D0935470E106992CD15726244A9 /* Parser+zeroOrMore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 000CE472C2B304B2481C8EFB68954373 /* Parser+zeroOrMore.swift */; };
 		B13714BE40D3592F811F30284120A36E /* Tags+Parsing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EFFA3828AD80B806736A2C7BDAD0E1E /* Tags+Parsing.swift */; };
+		BCE4AC18247D41C200CBFF53 /* UITextView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCE4AC17247D41C200CBFF53 /* UITextView+Extensions.swift */; };
 		C7AA14A4AA98E59B912F3E4B201E2B5C /* Pods-EasyAttributes_Tests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = B7662F41CE13A156AEED70FF03DF69EB /* Pods-EasyAttributes_Tests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		DE601E00B0C93682FBA033FEB1A8F10F /* SpecificParsers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 411E288E1207520DF7A55D09718E8FF5 /* SpecificParsers.swift */; };
 		E68A72A5533722551C0D4FF1B3E593EC /* Tag.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFFABBF9AF28804E87842A5A437048AF /* Tag.swift */; };
@@ -84,6 +85,7 @@
 		B8D7BCC6C693DB0901681942603A6F07 /* Fonts.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Fonts.swift; sourceTree = "<group>"; };
 		BBE4CB1E504BED8EEF90A33D1DF7BA9D /* Pods-EasyAttributes_Tests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-EasyAttributes_Tests.modulemap"; sourceTree = "<group>"; };
 		BC938FF5B7F16484476651A5F210F666 /* EasyAttributes.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = EasyAttributes.modulemap; sourceTree = "<group>"; };
+		BCE4AC17247D41C200CBFF53 /* UITextView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextView+Extensions.swift"; sourceTree = "<group>"; };
 		C0740F99B258FB62F71BF564F1747D66 /* EasyAttributes-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "EasyAttributes-umbrella.h"; sourceTree = "<group>"; };
 		C29F2306F872900F3802AAFA4F127B8C /* Pods-EasyAttributes_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-EasyAttributes_Example.release.xcconfig"; sourceTree = "<group>"; };
 		D16779AA1BA60F659729E639A7E2FCD0 /* Pods-EasyAttributes_Tests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-EasyAttributes_Tests-acknowledgements.markdown"; sourceTree = "<group>"; };
@@ -208,6 +210,7 @@
 			isa = PBXGroup;
 			children = (
 				28F06D834983B5B190267D983D1F0C05 /* UIColor+Extensions.swift */,
+				BCE4AC17247D41C200CBFF53 /* UITextView+Extensions.swift */,
 			);
 			name = Extensions;
 			path = Classes/Extensions;
@@ -459,6 +462,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1C36810E62F2AEFBDF59733F6E703865 /* AttributedString.swift in Sources */,
+				BCE4AC18247D41C200CBFF53 /* UITextView+Extensions.swift in Sources */,
 				6B358E985E6A3A7F3F419A517717DC4A /* EasyAttributes-dummy.m in Sources */,
 				EE4991D0E0A3B62BEF0AB77CDED31BB0 /* EasyAttributes.swift in Sources */,
 				6C11FE69E70653C72C2EDA2EDCB904FF /* Fonts.swift in Sources */,
