@@ -163,7 +163,7 @@ extension Array where Element == AttributedSubstring {
                 r.append(
                     NSAttributedString(
                         string: String(attr.string),
-                        attributes: attr.tags.attributes
+                        attributes: attr.tags.attributes?.merging(linkAttributes ?? [:]) { (_, new) in new }
                     )
                 )
             }
