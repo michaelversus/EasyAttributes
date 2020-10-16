@@ -72,6 +72,7 @@ class ViewController: UIViewController {
             textAlignment: .left,
             linkColor: .red
         )
+
         textView.translatesAutoresizingMaskIntoConstraints = false
         textView.delegate = self
         return textView

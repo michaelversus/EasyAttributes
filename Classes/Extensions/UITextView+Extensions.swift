@@ -73,4 +73,56 @@ extension UITextView {
         self.attributedText = easyAttributesString.toAttributed(with: mainAttributes)
         self.sizeToFit()
     }
+
+    public convenience init(easyAttributesString: String,
+                            font: UIFont,
+                            textColor: UIColor,
+                            backgroundColor: UIColor,
+                            textAlignment: NSTextAlignment,
+                            isEditable: Bool = false,
+                            isScrollEnabled: Bool = false,
+                            isSelectable: Bool = true,
+                            textContainerInset: UIEdgeInsets = .zero,
+                            lineFragmentPadding: CGFloat = 0
+    ) {
+        self.init()
+        let paragraph = NSMutableParagraphStyle()
+        paragraph.alignment = textAlignment
+        let mainAttributes: [NSAttributedString.Key: Any] = [
+            .font: font,
+            .foregroundColor: textColor,
+            .paragraphStyle: paragraph
+        ]
+        self.attributedText = easyAttributesString.toAttributed(with: mainAttributes)
+        self.font = font
+        self.textColor = textColor
+        self.backgroundColor = backgroundColor
+        self.textAlignment = textAlignment
+        self.isEditable = isEditable
+        self.isScrollEnabled = isScrollEnabled
+        self.isSelectable = isSelectable
+        self.isUserInteractionEnabled = true
+        self.textContainerInset = textContainerInset
+        self.textContainer.lineFragmentPadding = lineFragmentPadding
+        self.sizeToFit()
+    }
+
+    public func update(easyAttributesString: String,
+                       font: UIFont,
+                       textColor: UIColor,
+                       backgroundColor: UIColor,
+                       textAlignment: NSTextAlignment
+                       ) {
+        let paragraph = NSMutableParagraphStyle()
+        paragraph.alignment = textAlignment
+        let mainAttributes: [NSAttributedString.Key: Any] = [
+            .font: font,
+            .foregroundColor: textColor,
+            .paragraphStyle: paragraph
+        ]
+        self.attributedText = easyAttributesString.toAttributed(with: mainAttributes)
+        self.sizeToFit()
+    }
+
+
 }
